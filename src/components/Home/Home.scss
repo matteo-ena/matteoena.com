@@ -1,0 +1,36 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightblue;
+}
+
+#garden {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 20vh;
+    background-color: green;
+}
+
+#house {
+    position: fixed;
+    bottom: 20vh;
+    left: 20vw;
+    width: 40vw;
+    height: 35vw;
+    background-color: white;
+}
+
+#sun {
+    position: fixed;
+    top: 5vh;
+    right: 10vw;
+    width: 5vw;
+    height: 5vw;
+    background-color: orange;
+    border-radius: 50%;
+}
