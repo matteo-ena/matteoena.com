@@ -1,0 +1,24 @@
+.plane {
+    position: fixed;
+    top: 1%;
+    left: -50%;
+    width: 800px;
+    height: 150px;
+    animation: plane 30s infinite;
+    animation-delay: 5s;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes plane {
+    0% {
+        top: 1%;
+        left: -50%;
+    }
+    100% {
+        top: 1%;
+        left: 110%;
+    }
+}
