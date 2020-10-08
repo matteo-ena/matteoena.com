@@ -7,7 +7,11 @@
     <div class="modal">
       <div class="contact hidden">
         <div class="contact_card">
-          <form name="contact" netlify>
+          <form name="contact"
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
             <div class="contact_leftbox">
               <textarea class="contact_leftbox-textarea" name="message" COLS="35" ROWS="25" placeholder="Your message"
                         required></textarea>
