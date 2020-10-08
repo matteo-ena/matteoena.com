@@ -4,11 +4,10 @@
       <h1><span>MATTEO ENA</span>
         <span>WEB DEVELOPMENT</span></h1>
     </div>
-    <div class="modal"
-           @click="closeModal()">
-      <form class="contact hidden" method="POST" data-netlify="true">
+    <div class="modal">
+      <div class="contact hidden" method="POST">
         <div class="contact_card">
-          <form>
+          <form data-netlify="true">
             <div class="contact_leftbox">
               <textarea class="contact_leftbox-textarea" name="message" COLS="35" ROWS="25" placeholder="Your message"
                         required></textarea>
@@ -19,15 +18,14 @@
               </div>
               <div class="contact_rightbox-line">
                 <div id="input">
-
-                  <input type="text" name="name" placeholder="Name">
+                  <input type="text" name="name" placeholder="Name" required>
                   <input type="email" name="email" placeholder="E-mail" required>
                 </div>
               </div>
             </div>
           </form>
         </div>
-      </form>
+      </div>
     </div>
     <div class="house">
       <div class="house_roof"></div>

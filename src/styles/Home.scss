@@ -8,7 +8,11 @@
     height: 100%;
     background-color: black;
     animation: sunrise 40s infinite;
+    -webkit-animation: sunrise 40s infinite;
+    -moz-animation: sunrise 40s infinite;
     animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
     z-index: 9999;
 }
 
@@ -145,10 +149,6 @@
         box-shadow: -10px 0px 30px darkgrey inset;
         display: block;
         background: rgba(226, 226, 226, 1);
-        background: -moz-linear-gradient(-45deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
-        background: -webkit-linear-gradient(-45deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
-        background: -o-linear-gradient(-45deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
-        background: -ms-linear-gradient(-45deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
         background: linear-gradient(135deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
     }
 
@@ -246,6 +246,8 @@
         bottom: 13vh;
         cursor: pointer;
         animation: doorbell 0.5s infinite;
+        -webkit-animation: doorbell 0.5s infinite;
+        -moz-animation: doorbell 0.5s infinite;
 
         img {
             width: 2vw;
@@ -273,6 +275,8 @@
     border-radius: 50%;
     box-shadow: 0 0 10px 10px yellow;
     animation: sunRising 40s infinite;
+    -webkit-animation: sunRising 40s infinite;
+    -moz-animation: sunRising 40s infinite;
 }
 
 @keyframes sunRising {
@@ -321,16 +325,18 @@
 }
 
 .plane {
-    position: fixed;
-    top: 1%;
+    position: absolute;
+    top: 3vh;
     left: -50%;
-    width: 800px;
-    height: 150px;
+    width: 10vw;
+    height: 5vw;
     animation: plane 30s infinite;
+    -webkit-animation: plane 30s infinite;
+    -moz-animation: plane 30s infinite;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 
 @keyframes plane {
@@ -375,8 +381,8 @@
 
 .bubble-bottom-left:before {
     content: "";
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     position: absolute;
     border-left: 24px solid #fff;
     border-right: 12px solid transparent;
@@ -396,14 +402,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
 }
 
 .openModal {
     animation: openModal 1s;
+    -webkit-animation: openModal 1s;
+    -moz-animation: openModal 1s;
 }
 
 .closeModal {
     animation: closeModal 1s;
+    -webkit-animation: closeModal 1s;
+    -moz-animation: closeModal 1s;
 }
 
 @keyframes openModal {

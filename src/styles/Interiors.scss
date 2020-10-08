@@ -1,5 +1,4 @@
 * {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -251,30 +250,6 @@ body {
         overflow: hidden;
         cursor: pointer;
 
-        @-webkit-keyframes spin {
-            from {
-                -webkit-transform: rotate(0deg);
-            }
-            to {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-        @-ms-keyframes spin {
-            from {
-                -ms-transform: rotate(0deg);
-            }
-            to {
-                -ms-transform: rotate(360deg);
-            }
-        }
-        @-moz-keyframes spin {
-            from {
-                -moz-transform: rotate(0deg);
-            }
-            to {
-                -moz-transform: rotate(360deg);
-            }
-        }
         @keyframes spin {
             from {
                 transform: rotate(0deg);
@@ -389,6 +364,8 @@ body {
         span {
             border-right: .05em solid;
             animation: caret 1s steps(1) infinite;
+            -webkit-animation: caret 1s steps(1) infinite;
+            -moz-animation: caret 1s steps(1) infinite;
         }
     }
 
@@ -400,10 +377,6 @@ body {
         box-shadow: -10px 0px 30px darkgrey inset;
         display: block;
         background: rgba(226, 226, 226, 1);
-        background: -moz-linear-gradient(-45deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
-        background: -webkit-linear-gradient(-45deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
-        background: -o-linear-gradient(-45deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
-        background: -ms-linear-gradient(-45deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
         background: linear-gradient(135deg, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 36%, rgba(255, 245, 255, 1) 60%, rgba(242, 242, 242, 1) 67%, rgba(255, 255, 255, 1) 77%, rgba(219, 219, 219, 1) 100%);
         position: absolute;
         left: 50%;
@@ -411,7 +384,7 @@ body {
         transform: translateX(-50%);
         width: 155vw;
         height: 45vh;
-        
+
         @media (min-width: 1025px) {
             width: 35vw;
         }
