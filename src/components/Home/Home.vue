@@ -5,9 +5,9 @@
         <span>WEB DEVELOPMENT</span></h1>
     </div>
     <div class="modal">
-      <div class="contact hidden" method="POST">
+      <div class="contact hidden">
         <div class="contact_card">
-          <form data-netlify="true">
+          <form name="contact" netlify>
             <div class="contact_leftbox">
               <textarea class="contact_leftbox-textarea" name="message" COLS="35" ROWS="25" placeholder="Your message"
                         required></textarea>
