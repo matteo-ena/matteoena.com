@@ -357,7 +357,7 @@ body {
         color: white;
         text-transform: uppercase;
 
-        @media (min-width: 361px) {
+        @media (min-width: 1024px) {
             font-size: 3em;
         }
 
@@ -420,7 +420,7 @@ body {
         }
 
         &_presentation {
-            font-size: 3em;
+            font-size: 2em;
         }
     }
 }
