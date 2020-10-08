@@ -1,8 +1,33 @@
 <template>
-  <div class="container">
+  <div class="outside">
     <div class="title">
       <h1><span>MATTEO ENA</span>
         <span>WEB DEVELOPMENT</span></h1>
+    </div>
+    <div class="modal"
+           @click="closeModal()">
+      <form class="contact hidden" method="POST" data-netlify="true">
+        <div class="contact_card">
+          <form>
+            <div class="contact_leftbox">
+              <textarea class="contact_leftbox-textarea" name="message" COLS="35" ROWS="25" placeholder="Your message"
+                        required></textarea>
+            </div>
+            <div class="contact_rightbox">
+              <div class="contact_rightbox-send">
+                <input class="sendbutton" type="submit" value="Send">
+              </div>
+              <div class="contact_rightbox-line">
+                <div id="input">
+
+                  <input type="text" name="name" placeholder="Name">
+                  <input type="email" name="email" placeholder="E-mail" required>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </form>
     </div>
     <div class="house">
       <div class="house_roof"></div>
@@ -14,41 +39,35 @@
           <div class="house_window central"></div>
           <div class="house_backdoor">
             <div class="house_dude">
-            <img :src="require('@/assets/dude.png')" alt="dude">
+              <img :src="require('@/assets/dude.png')" alt="dude">
             </div>
-          <div class="house_door">
-            <div class="house_doorHandle"></div>
+            <div class="house_door">
+              <div class="house_doorHandle"></div>
+            </div>
           </div>
+          <div class="bubble bubble-bottom-left hidden" contenteditable>{{ message }}</div>
+          <div class="house_doorbell"
+               @click="helloThere()">
+            <img :src="require('@/assets/doorbell.svg')" alt="doorbell">
           </div>
-          <div class="bubble bubble-bottom-left hidden" contenteditable></div>
-          <Doorbell />
         </div>
       </div>
     </div>
     <div id="garden">
-      <Mailbox />
+      <div id="mailbox"
+           @click="showModal()">
+        <img :src="require('@/assets/mailbox.svg')" alt="mail">
+      </div>
     </div>
     <div id="sun"></div>
-    <Plane />
+    <div class="plane">
+      <img :src="require('@/assets/plane.svg')" alt="plane">
+    </div>
   </div>
 </template>
 
+<script src="./Home.js"/>
+
 <style lang="scss">
-@import 'Home.scss';
+@import 'src/styles/main';
 </style>
-
-<script>
-import Doorbell from './Doorbell/Doorbell.vue';
-import Mailbox from './Mailbox/Mailbox.vue';
-import Plane from './Plane/Plane.vue';
-import './Home.js';
-
-export default {
-  name: 'App',
-  components: {
-    Doorbell,
-    Mailbox,
-    Plane
-  }
-}
-</script>

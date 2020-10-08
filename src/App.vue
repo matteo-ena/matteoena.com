@@ -1,27 +1,24 @@
 <template>
   <div id="app">
     <Home />
+    <Interiors />
   </div>
 </template>
 
 <script>
 import Home from './components/Home/Home.vue'
+import Interiors from "./components/Interiors/Interiors.vue";
 
 export default {
   name: 'App',
   components: {
-    Home
+    Home,
+    Interiors
+  },
+  data() {
+    return {
+      component: 'Interiors'
+    }
   }
 }
 </script>
-
-<!--<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>-->

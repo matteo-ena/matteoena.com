@@ -1,24 +1,30 @@
-@import '/src/styles/fonts.scss';
+@import '/src/styles/fonts';
 
-.container {
+.outside {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: black;
     animation: sunrise 40s infinite;
     animation-direction: alternate;
+    z-index: 9999;
 }
 
 .title {
     position: fixed;
     top: -1%;
     right: 5%;
-    width: 600px;
-    height: 150px;
+    width: 300px;
+    height: 120px;
     text-align: center;
-    font-family: "Paytone One", Helvetica, sans-serif;
+    font-family: monospace;
+
+    @media (min-width: 900px) {
+        width: 600px;
+        height: 150px;
+    }
 
     h1 {
         text-transform: uppercase;
@@ -28,10 +34,15 @@
     h1 span {
         display: block;
         margin: 11px 0 17px 0;
-        font-size: 60px;
-        line-height: 80px;
+        font-size: 30px;
+        line-height: 30px;
         text-shadow: 0 13.36px 8.896px #c4b59d, 0 -2px 1px #fff;
         letter-spacing: -4px;
+
+        @media (min-width: 900px) {
+            font-size: 60px;
+            line-height: 80px;
+        }
     }
 }
 
@@ -128,7 +139,7 @@
 
     &_window {
         border-image-slice: 1;
-        border-width: 15px;
+        border-width: 8px;
         border-style: solid;
         border-image-source: linear-gradient(to left, rgb(153, 97, 80), rgb(189, 129, 111), rgb(166, 98, 78), rgb(189, 129, 111), rgb(166, 98, 78), rgb(189, 129, 111), rgb(153, 97, 80));
         box-shadow: -10px 0px 30px darkgrey inset;
@@ -185,8 +196,9 @@
         transform: translateX(-50%);
         width: 10vw;
         height: 30vh;
-        background: grey;
+        background: rgb(247, 243, 230);
         overflow: hidden;
+        border: 1px solid rgba(33, 22, 0, 1);
     }
 
     &_dude {
@@ -220,12 +232,33 @@
     &_doorHandle {
         position: absolute;
         right: .5vw;
-        bottom: 13vh;
+        bottom: 50%;
         width: 1vw;
         height: 1vw;
         border-radius: 50%;
         background: radial-gradient(circle closest-side, rgb(225, 207, 207), rgb(129, 84, 84));
         border: 1px solid rgb(225, 207, 207);
+    }
+
+    &_doorbell {
+        position: absolute;
+        right: 6vw;
+        bottom: 13vh;
+        cursor: pointer;
+        animation: doorbell 0.5s infinite;
+
+        img {
+            width: 2vw;
+        }
+    }
+}
+
+@keyframes doorbell {
+    0% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
     }
 }
 
@@ -276,6 +309,41 @@
     background-size: 6px 6px, 3px 3px;
 }
 
+#mailbox {
+    position: fixed;
+    bottom: 7vh;
+    right: 10vw;
+    cursor: pointer;
+
+    img {
+        width: 10vw;
+    }
+}
+
+.plane {
+    position: fixed;
+    top: 1%;
+    left: -50%;
+    width: 800px;
+    height: 150px;
+    animation: plane 30s infinite;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes plane {
+    0% {
+        top: 1%;
+        left: -250%;
+    }
+    100% {
+        top: 1%;
+        left: 110%;
+    }
+}
+
 .doorOpen {
     transform-origin: left;
     transition: all 2s ease-in-out;
@@ -291,34 +359,228 @@
 }
 
 .bubble {
-  position: absolute;
+    position: absolute;
     bottom: 28vh;
     left: 60%;
-  font-family: sans-serif;
-  font-size: 24px;
-  line-height: 24px;
-  width: 200px;
-  background: #fff;
-  border-radius: 50%;
-  padding: 24px;
-  text-align: center;
-  color: #000;
+    font-family: monospace;
+    font-size: 24px;
+    line-height: 24px;
+    width: 200px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 24px;
+    text-align: center;
+    color: #000;
 }
 
 .bubble-bottom-left:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 24px solid #fff;
-  border-right: 12px solid transparent;
-  border-top: 12px solid #fff;
-  border-bottom: 20px solid transparent;
-  left: 32px;
-  bottom: -10px;
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 24px solid #fff;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+    border-bottom: 20px solid transparent;
+    left: 32px;
+    bottom: -10px;
 }
 
 .hidden {
-    visibility: hidden;
+    display: none;
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.openModal {
+    animation: openModal 1s;
+}
+
+.closeModal {
+    animation: closeModal 1s;
+}
+
+@keyframes openModal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes closeModal {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.contact {
+    max-width: 970px;
+    z-index: 9999;
+
+    &_card {
+        background: white;
+        margin: auto;
+        height: 400px;
+        width: 650px;
+        border: solid 3px black;
+        position: relative;
+    }
+
+    &_leftbox {
+        float: left;
+        width: 49%;
+        overflow: hidden;
+
+        &-textarea {
+            margin: 20px;
+            border: none;
+            resize: none;
+            font-size: 12px;
+            font-family: monospace;
+        }
+    }
+
+    &_rightbox {
+        float: right;
+        width: 50%;
+
+        &-send input {
+            float: right;
+            display: block;
+            margin: 20px;
+            height: 90px;
+            width: 70px;
+            background-color: #404040;
+            color: white;
+            border-style: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: monospace;
+            letter-spacing: 2px;
+        }
+
+        &-line {
+            margin-top: 10%;
+            height: 340px;
+            border-left: solid 1px black;
+
+            #input {
+                padding-top: 180px;
+            }
+
+            #input input {
+                margin: 20px 20px 40px 30px;
+                display: block;
+                width: 265px;
+                font-size: 16px;
+                border: none;
+                border-bottom: dotted 2px black;
+                font-family: monospace;
+            }
+        }
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .title {
+        right: 50%;
+        transform: translateX(50%);
+
+        h1 span {
+            font-size: 40px;
+        }
+    }
+
+    .contact {
+
+        &_card {
+            width: 98vw;
+        }
+
+        &_rightbox-line {
+            #input input {
+                width: 35vw;
+            }
+        }
+    }
+
+    .house {
+        width: 90vw;
+        height: 50vh;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &_roof {
+            width: 80vw;
+        }
+
+        &_main {
+            width: 95vw;
+            height: 41vh;
+        }
+
+        &_entrance {
+            width: 50vw;
+            height: 53vh;
+        }
+
+        &_backdoor, &_door {
+            width: 15vw;
+            height: 22vh;
+        }
+
+        .central, .left, .right {
+            width: 13vw;
+            height: 12vh;
+        }
+
+        &_window {
+            border-width: 8px;
+        }
+
+        &_doorbell {
+            bottom: 10vh;
+
+            img {
+                width: 6vw;
+            }
+        }
+
+        &_dude {
+            width: 20vw;
+            height: 20vh;
+            right: -20vw;
+
+            img {
+                width: 20vw;
+                height: 20vh;
+            }
+        }
+    }
+
+    .dudeMoves {
+        transform: translateX(-12vw);
+    }
+
+    .bubble {
+        bottom: 20vh;
+        left: 55%;
+    }
+
+    .plane {
+        left: -250%;
+    }
 }
 

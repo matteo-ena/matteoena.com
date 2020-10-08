@@ -1,0 +1,28 @@
+@import 'Home.scss';
+@import 'Interiors.scss';
+
+.fadeOut {
+    animation: fadeOut 2s;
+}
+
+.fadeIn {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
