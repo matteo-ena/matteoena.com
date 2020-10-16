@@ -32,9 +32,11 @@ export default {
                     }, 20000);
                 }
                 else if (i < dataText[i].length) {
+                    setTimeout(() => {
                     typeWriter(dataText[i], 0, () => {
                         StartTextAnimation(i + 1);
                     });
+                    }, 1000);
                 }
             }
 
