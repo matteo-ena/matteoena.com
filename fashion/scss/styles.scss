@@ -1,13 +1,13 @@
 @font-face {
   font-family: Retroica;
-  src: url(../../matteoena/fonts/Retroica.woff2) format('woff2'),
-  url(../../matteoena/fonts/Retroica.ttf) format('ttf');
+  src: url(/fonts/Retroica.woff2) format('woff2'),
+  url(/fonts/Retroica.ttf) format('ttf');
 }
 
 html,
 body {
   font-family: Retroica, Helvetica, Arial, sans-serif;
-  background: url(../../matteoena/assets/home_background_2.webp) no-repeat;
+  background: url(/assets/home_background_2.webp) no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -55,7 +55,7 @@ header {
   &_icon {
     width: 5rem;
     height: 5rem;
-    background: url(../../matteoena/assets/email_icon.webp) no-repeat;
+    background: url(/assets/email_icon.webp) no-repeat;
     background-size: contain;
   }
 }
@@ -255,26 +255,26 @@ header {
     $size: 80px + random(20);
     height: $size;
     width: $size;
-    $imgList: url(../../matteoena/assets/html_logo.webp),
-    url(../../matteoena/assets/css_logo.webp),
-    url(../../matteoena/assets/js_logo.webp),
-    url(../../matteoena/assets/vuejs_logo.webp),
-    url(../../matteoena/assets/svelte_logo.webp),
-    url(../../matteoena/assets/react_logo.webp),
-    url(../../matteoena/assets/sass_logo.webp),
-    url(../../matteoena/assets/jquery_logo.webp),
-    url(../../matteoena/assets/web_performance_logo.webp),
-    url(../../matteoena/assets/selenium_logo.webp),
-    url(../../matteoena/assets/github_logo.webp),
-    url(../../matteoena/assets/azure_logo.webp),
-    url(../../matteoena/assets/npm_logo.webp),
-    url(../../matteoena/assets/jira_logo.webp),
-    url(../../matteoena/assets/java_logo.webp),
-    url(../../matteoena/assets/xml_logo.webp),
-    url(../../matteoena/assets/json_logo.webp),
-    url(../../matteoena/assets/webstorm_logo.webp),
-    url(../../matteoena/assets/devtools_logo.webp),
-    url(../../matteoena/assets/aem_logo.webp);
+    $imgList: url(/assets/html_logo.webp),
+    url(/assets/css_logo.webp),
+    url(/assets/js_logo.webp),
+    url(/assets/vuejs_logo.webp),
+    url(/assets/svelte_logo.webp),
+    url(/assets/react_logo.webp),
+    url(/assets/sass_logo.webp),
+    url(/assets/jquery_logo.webp),
+    url(/assets/web_performance_logo.webp),
+    url(/assets/selenium_logo.webp),
+    url(/assets/github_logo.webp),
+    url(/assets/azure_logo.webp),
+    url(/assets/npm_logo.webp),
+    url(/assets/jira_logo.webp),
+    url(/assets/java_logo.webp),
+    url(/assets/xml_logo.webp),
+    url(/assets/json_logo.webp),
+    url(/assets/webstorm_logo.webp),
+    url(/assets/devtools_logo.webp),
+    url(/assets/aem_logo.webp);
     background-image: nth($imgList, ($i % 20) + 1);
   }
 }
