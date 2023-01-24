@@ -1,0 +1,24 @@
+{
+  "name": "matteoena",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-dev": "sass --watch --update --style=expanded fashion/scss:fashion/css",
+    "sass-prod": "sass --no-source-map --style=compressed fashion/scss:fashion/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteo-ena/matteoena.com.git"
+  },
+  "author": "Matteo Ena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matteo-ena/matteoena.com/issues"
+  },
+  "homepage": "https://github.com/matteo-ena/matteoena.com#readme",
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}
