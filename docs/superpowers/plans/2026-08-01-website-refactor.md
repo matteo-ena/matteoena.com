@@ -20,8 +20,11 @@
 - Preserve these files at the built site root: `app-ads.txt`, `manifest.json`, plus a new `CNAME`.
 - All motion gated behind `@media (prefers-reduced-motion: reduce)`.
 - **Mobile-first CSS:** base styles target small screens; enhance upward with
-  `min-width` media queries only. Do not use `max-width` breakpoints. Fluid
-  `clamp()` sizing is preferred over breakpoints where it suffices.
+  `min-width` media queries only. Do not use `max-width` **media-query
+  breakpoints** (the desktop-first anti-pattern). The `max-width` **property**
+  on a content container (e.g. `max-width: 60ch` for line length, capping a
+  grid on large screens) is allowed and is itself mobile-first. Fluid `clamp()`
+  sizing is preferred over breakpoints where it suffices.
 - Every commit message ends with the Co-Authored-By trailer already used in this repo.
 
 ---
