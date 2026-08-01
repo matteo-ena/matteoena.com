@@ -1,0 +1,17 @@
+---
+import { about } from '../data/content';
+---
+<section id="about" class="section reveal">
+  <h2 class="section__heading">{about.heading}</h2>
+  <div class="about__body">
+    {about.paragraphs.map((p) => <p>{p}</p>)}
+  </div>
+</section>
+
+<style lang="scss">
+  .about__body {
+    max-width: 60ch;
+    font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  }
+  .about__body p { margin: 0 0 1.25rem; }
+</style>

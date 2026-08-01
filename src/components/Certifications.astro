@@ -1,0 +1,44 @@
+---
+import { certifications } from '../data/content';
+---
+<section id="certifications" class="section reveal">
+  <h2 class="section__heading">{certifications.heading}</h2>
+  <div class="certs">
+    {certifications.items.map((c) => (
+      <article class="cert">
+        <span class={`cert__status cert__status--${c.status}`}>
+          {c.status === 'earned' ? 'Earned' : 'In progress'}
+        </span>
+        <h3 class="cert__title">{c.title}</h3>
+        <p class="cert__issuer">{c.issuer}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style lang="scss">
+  .certs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+  }
+  .cert {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+  }
+  .cert__status {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+  .cert__status--earned { background: var(--accent); color: var(--on-accent); }
+  .cert__status--in-progress { border: 1px solid var(--accent); color: var(--accent); }
+  .cert__title { font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .cert__issuer { color: var(--text-muted); margin: 0; }
+</style>
