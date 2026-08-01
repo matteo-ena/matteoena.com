@@ -1,0 +1,43 @@
+---
+import { hero, contact } from '../data/content';
+---
+<section class="hero">
+  <p class="hero__kicker">{hero.kicker}</p>
+  <h1 class="hero__name">
+    {hero.firstName}<br /><span class="hero__accent">{hero.lastName}</span>
+  </h1>
+  <a class="hero__cta" href={`mailto:${contact.email}`}>{hero.ctaLabel} →</a>
+</section>
+
+<style lang="scss">
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem clamp(1rem, 6vw, 5rem) 3rem;
+  }
+  .hero__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+  }
+  .hero__name {
+    font-size: clamp(3.5rem, 16vw, 12rem);
+  }
+  .hero__accent { color: var(--accent); }
+  .hero__cta {
+    margin-top: 3rem;
+    align-self: flex-start;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    color: var(--text);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .hero__cta:hover { background: var(--accent); color: #fff; }
+</style>

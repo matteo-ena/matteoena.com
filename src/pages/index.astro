@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
 import { siteMeta } from '../data/content';
 ---
 <Layout title={siteMeta.title} description={siteMeta.description}>
   <Nav />
   <main id="top">
-    <h1>Matteo Ena</h1>
+    <Hero />
   </main>
 </Layout>
