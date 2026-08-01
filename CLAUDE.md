@@ -28,9 +28,11 @@ npm run check-build  # assert deploy-critical facts about dist/
 - Theme: `data-theme` on `<html>`, set pre-paint by an inline script in Layout,
   toggled by the Nav button, persisted to localStorage.
 - `public/` is served at the site root — includes `app-ads.txt`, `manifest.json`,
-  `CNAME` (custom domain), `favicon.svg`, `og.png`.
-- Deploy: `.github/workflows/deploy.yml` builds and publishes `dist/` to GitHub Pages
-  on push to `main`.
+  `favicon.svg`, `og.png`.
+- Deploy: **Netlify** (custom domain `matteoena.com`). Config in `netlify.toml`
+  (`command = "npm run build && npm run check-build"`, `publish = "dist"`,
+  Node 22). Netlify builds on push to `main` via the connected GitHub repo. The
+  custom domain is managed in Netlify's dashboard, not via a `CNAME` file.
 - `assets/` retains the old tech-logo images; they are not currently referenced.
 
 ## Assets

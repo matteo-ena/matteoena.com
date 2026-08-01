@@ -16,7 +16,6 @@ check('theme toggle present', html.includes('theme-toggle'));
 check('no external google fonts', !/fonts\.(googleapis|gstatic)/.test(html));
 check('app-ads.txt at root', existsSync('dist/app-ads.txt'));
 check('manifest.json at root', existsSync('dist/manifest.json'));
-check('CNAME correct', existsSync('dist/CNAME') && readFileSync('dist/CNAME', 'utf8').trim() === 'matteoena.com');
 check('og image present', existsSync('dist/og.png'));
 check('favicon.svg at root', existsSync('dist/favicon.svg'));
 
