@@ -235,6 +235,16 @@ h1, h2, h3 {
 
 a { color: inherit; }
 
+// Shared section layout utilities (used by every section component)
+.section {
+  padding: clamp(4rem, 12vh, 9rem) clamp(1rem, 6vw, 5rem);
+  border-top: 1px solid var(--border);
+}
+.section__heading {
+  font-size: clamp(2rem, 7vw, 4.5rem);
+  margin-bottom: 2rem;
+}
+
 // Scroll reveal utility — opt in with class="reveal"
 .reveal {
   opacity: 0;
@@ -646,22 +656,9 @@ git commit -m "$(printf 'feat: add oversized-type hero section\n\nCo-Authored-By
 - Consumes: `about`, `skills`, `certifications` from `content.ts`.
 - Produces: `<About />`, `<Skills />`, `<Certifications />`, each a `<section>` with an `id` matching its nav anchor.
 
-- [ ] **Step 1: Create a shared section style note**
+The shared `.section` / `.section__heading` layout rules live in `global.scss` (added in Task 2). Components below define only their own unique styles and reuse those global classes.
 
-All three components share this section wrapper style (repeat it in each `<style>` block — components are read independently):
-
-```scss
-.section {
-  padding: clamp(4rem, 12vh, 9rem) clamp(1rem, 6vw, 5rem);
-  border-top: 1px solid var(--border);
-}
-.section__heading {
-  font-size: clamp(2rem, 7vw, 4.5rem);
-  margin-bottom: 2rem;
-}
-```
-
-- [ ] **Step 2: Create src/components/About.astro**
+- [ ] **Step 1: Create src/components/About.astro**
 
 ```astro
 ---
@@ -675,14 +672,6 @@ import { about } from '../data/content';
 </section>
 
 <style lang="scss">
-  .section {
-    padding: clamp(4rem, 12vh, 9rem) clamp(1rem, 6vw, 5rem);
-    border-top: 1px solid var(--border);
-  }
-  .section__heading {
-    font-size: clamp(2rem, 7vw, 4.5rem);
-    margin-bottom: 2rem;
-  }
   .about__body {
     max-width: 60ch;
     font-size: clamp(1.05rem, 2.2vw, 1.4rem);
@@ -691,7 +680,7 @@ import { about } from '../data/content';
 </style>
 ```
 
-- [ ] **Step 3: Create src/components/Skills.astro**
+- [ ] **Step 2: Create src/components/Skills.astro**
 
 ```astro
 ---
@@ -705,14 +694,6 @@ import { skills } from '../data/content';
 </section>
 
 <style lang="scss">
-  .section {
-    padding: clamp(4rem, 12vh, 9rem) clamp(1rem, 6vw, 5rem);
-    border-top: 1px solid var(--border);
-  }
-  .section__heading {
-    font-size: clamp(2rem, 7vw, 4.5rem);
-    margin-bottom: 2rem;
-  }
   .skills__grid {
     list-style: none;
     margin: 0;
@@ -732,7 +713,7 @@ import { skills } from '../data/content';
 </style>
 ```
 
-- [ ] **Step 4: Create src/components/Certifications.astro**
+- [ ] **Step 3: Create src/components/Certifications.astro**
 
 ```astro
 ---
@@ -754,14 +735,6 @@ import { certifications } from '../data/content';
 </section>
 
 <style lang="scss">
-  .section {
-    padding: clamp(4rem, 12vh, 9rem) clamp(1rem, 6vw, 5rem);
-    border-top: 1px solid var(--border);
-  }
-  .section__heading {
-    font-size: clamp(2rem, 7vw, 4.5rem);
-    margin-bottom: 2rem;
-  }
   .certs {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -789,7 +762,7 @@ import { certifications } from '../data/content';
 </style>
 ```
 
-- [ ] **Step 5: Mount the three sections in index.astro**
+- [ ] **Step 4: Mount the three sections in index.astro**
 
 ```astro
 ---
@@ -812,7 +785,7 @@ import { siteMeta } from '../data/content';
 </Layout>
 ```
 
-- [ ] **Step 6: Verify build and anchors/content**
+- [ ] **Step 5: Verify build and anchors/content**
 
 Run:
 ```bash
@@ -825,7 +798,7 @@ grep -q 'Claude Architect' dist/index.html && echo OK
 ```
 Expected: prints `OK`.
 
-- [ ] **Step 7: Commit**
+- [ ] **Step 6: Commit**
 
 ```bash
 git add src/components/About.astro src/components/Skills.astro src/components/Certifications.astro src/pages/index.astro
@@ -862,14 +835,6 @@ import { contact } from '../data/content';
 </section>
 
 <style lang="scss">
-  .section {
-    padding: clamp(4rem, 12vh, 9rem) clamp(1rem, 6vw, 5rem);
-    border-top: 1px solid var(--border);
-  }
-  .section__heading {
-    font-size: clamp(2rem, 7vw, 4.5rem);
-    margin-bottom: 2rem;
-  }
   .contact__actions {
     display: flex;
     gap: 1.5rem;
@@ -971,7 +936,6 @@ Add inside `<head>` (after the `<title>`), using `Astro.site`:
 ```astro
     <link rel="canonical" href={Astro.site} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="manifest-placeholder" content="" />
     <link rel="manifest" href="/manifest.json" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
