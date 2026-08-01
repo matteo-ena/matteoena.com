@@ -19,6 +19,9 @@
 - Custom domain (exact): `matteoena.com`. `site` in Astro config: `https://matteoena.com`.
 - Preserve these files at the built site root: `app-ads.txt`, `manifest.json`, plus a new `CNAME`.
 - All motion gated behind `@media (prefers-reduced-motion: reduce)`.
+- **Mobile-first CSS:** base styles target small screens; enhance upward with
+  `min-width` media queries only. Do not use `max-width` breakpoints. Fluid
+  `clamp()` sizing is preferred over breakpoints where it suffices.
 - Every commit message ends with the Co-Authored-By trailer already used in this repo.
 
 ---
@@ -467,7 +470,7 @@ const links = [
     font-size: 1.1rem;
   }
   nav ul {
-    display: flex;
+    display: none; // hidden on mobile (scroll-based nav); shown on wider screens
     gap: clamp(0.75rem, 2vw, 1.75rem);
     list-style: none;
     margin: 0;
@@ -499,8 +502,8 @@ const links = [
     transition: transform 0.2s ease;
   }
   :global(html[data-theme='light']) .theme-toggle__dot { transform: translateX(18px); }
-  @media (max-width: 600px) {
-    nav ul { display: none; }
+  @media (min-width: 601px) {
+    nav ul { display: flex; }
   }
 </style>
 
