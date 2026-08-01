@@ -35,4 +35,7 @@ npm run check-build  # assert deploy-critical facts about dist/
 
 ## Assets
 
-Tech-logo particle images live in `assets/` as `.webp` (except `graphql_logo.png`). When adding a logo to the particle rotation, add the file and append its `url(...)` to `$imgList` in styles.scss.
+`assets/` holds the old tech-logo images (`.webp`, plus `graphql_logo.png`) and
+background images from the previous version of the site. They are retained in the
+repo but are **not referenced** by the current Astro site. Site-served static files
+(favicon, OG image, manifest, CNAME, app-ads.txt) live in `public/`, not `assets/`.

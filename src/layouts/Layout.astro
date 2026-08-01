@@ -32,6 +32,9 @@ const { title, description } = Astro.props;
     <meta name="twitter:image" content={new URL('/og.png', Astro.site)} />
     <script is:inline>
       (function () {
+        // Marker so CSS can hide scroll-reveal content only when JS is present.
+        // Without JS this class is never added, so .reveal content stays visible.
+        document.documentElement.classList.add('js');
         try {
           var stored = localStorage.getItem('theme');
           var theme = stored

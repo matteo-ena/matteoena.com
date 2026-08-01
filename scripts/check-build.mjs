@@ -18,6 +18,7 @@ check('app-ads.txt at root', existsSync('dist/app-ads.txt'));
 check('manifest.json at root', existsSync('dist/manifest.json'));
 check('CNAME correct', existsSync('dist/CNAME') && readFileSync('dist/CNAME', 'utf8').trim() === 'matteoena.com');
 check('og image present', existsSync('dist/og.png'));
+check('favicon.svg at root', existsSync('dist/favicon.svg'));
 
 let failed = 0;
 for (const c of checks) {

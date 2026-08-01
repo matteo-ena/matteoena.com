@@ -40,15 +40,17 @@ a { color: inherit; }
   margin-bottom: 2rem;
 }
 
-// Scroll reveal utility — opt in with class="reveal"
-.reveal {
+// Scroll reveal utility — opt in with class="reveal".
+// Hidden state is gated behind `html.js` (set pre-paint in Layout), so with
+// JS disabled the content is visible by default rather than stuck at opacity:0.
+html.js .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.reveal.is-visible { opacity: 1; transform: none; }
+html.js .reveal.is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   body { transition: none; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
 }
