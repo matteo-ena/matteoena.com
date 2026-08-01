@@ -1078,8 +1078,13 @@ Expected: prints `NO LEGACY REFS`.
 
 - [ ] **Step 4: Commit**
 
+The legacy removals are already staged by the `git rm` in Step 1. Stage ONLY the
+rewritten `CLAUDE.md` explicitly — do NOT run `git add -A`/`git add .` (untracked
+`.idea/*` IDE files are present and must not be committed).
+
 ```bash
-git add -A
+git add CLAUDE.md
+git status --short   # confirm: only D index.html, D fashion/*, D fancy-stuff/*, and A/M CLAUDE.md are staged
 git commit -m "$(printf 'chore: remove legacy static site and update CLAUDE.md\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>')"
 ```
 
