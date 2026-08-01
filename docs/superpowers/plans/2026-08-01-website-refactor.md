@@ -758,7 +758,7 @@ import { certifications } from '../data/content';
     border-radius: 999px;
     margin-bottom: 1rem;
   }
-  .cert__status--earned { background: var(--accent); color: #fff; }
+  .cert__status--earned { background: var(--accent); color: var(--on-accent); }
   .cert__status--in-progress { border: 1px solid var(--accent); color: var(--accent); }
   .cert__title { font-size: 1.5rem; margin-bottom: 0.4rem; }
   .cert__issuer { color: var(--text-muted); margin: 0; }
@@ -849,7 +849,7 @@ import { contact } from '../data/content';
     padding: 0.85rem 1.6rem;
     border-radius: 999px;
     background: var(--accent);
-    color: #fff;
+    color: var(--on-accent);
     font-size: 1rem;
   }
   .contact__link {
