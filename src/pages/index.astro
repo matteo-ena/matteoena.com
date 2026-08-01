@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import { siteMeta } from '../data/content';
 ---
-<Layout title="Matteo Ena — Frontend Developer" description="Frontend developer based in Barcelona.">
-  <main>
+<Layout title={siteMeta.title} description={siteMeta.description}>
+  <Nav />
+  <main id="top">
     <h1>Matteo Ena</h1>
   </main>
 </Layout>
