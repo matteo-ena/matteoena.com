@@ -1,0 +1,9 @@
+# Netlify build configuration for the Astro static site.
+# The site is served at the apex domain (matteoena.com); Astro's `site` config
+# matches, and asset paths are root-absolute, so no `base` is needed.
+[build]
+  command = "npm run build && npm run check-build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
